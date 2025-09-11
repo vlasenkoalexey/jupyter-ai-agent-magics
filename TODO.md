@@ -1,3 +1,4 @@
 - Update packages after https://github.com/datalayer/jupyter-nbmodel-client/issues/46 is fixed
+- Add ability to reuse kernels instead of creating new ones
 - Ability to override default model
 - Ability to register additional tools
