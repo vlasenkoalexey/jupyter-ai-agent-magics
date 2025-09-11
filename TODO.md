@@ -1,0 +1,3 @@
+- Update packages after https://github.com/datalayer/jupyter-nbmodel-client/issues/46 is fixed
+- Ability to override default model
+- Ability to register additional tools
