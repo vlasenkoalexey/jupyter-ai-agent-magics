@@ -1,4 +1,4 @@
-# Jupyter AI Agent Magics
+# Jupyter AI Agent Magics  🪐+🤖+✨=❤️
 
 Jupyter AI Agent Magics brings AI agent capabilities to JupyterLab, enhancing its role as the ultimate research tool for AI research, which has historically lacked robust LLM integration. This project enables seamless interaction with large language models within JupyterLab, streamlining workflows for researchers and data scientists. Drawing inspiration from projects like Jupyter AI, Jupyter MCP Server, and Jupyter AI Agents, it provides practical tools to elevate your notebook experience.
 
