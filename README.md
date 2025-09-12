@@ -30,7 +30,7 @@ Jupyter notebooks' architecture of small, discrete code cells creates the perfec
 ## Features
 
 Jupyter AI Agent Magics offers:
-- Simple to use and understand %%agent magic
+- Simple to use and understand `%%agent` and `%%chat` magics
 - Prebuilt set of tools to modify and run Jupyter cells
 - Great usability by implementing LLM response streaming, and user callbacks
 - Great extensibility to offer option to easilty introduce
@@ -170,11 +170,19 @@ from jupyter_ai_agent_magics import magics
 magics.load_ipython_extension(get_ipython())
 ```
 
-and use it to make instructions to LLM:
+See `autoregister_agent_magic.ipynb` notebook if you'd like to pre-register magic to be auto loaded at Jupyter startup.
+
+Call into LLM and allow it to execute some actions on your behalf using `%%agent` magic:
 
 ```
 %%agent
 Write a notebook demonstrating how to train MNIST model.
 ```
 
+If you just want to ask LLM some question, and you don't want it to call into any tools, use `%%chat` magic:
+
+```
+%%chat
+Tell my about asyncio in Python.
+```
 
