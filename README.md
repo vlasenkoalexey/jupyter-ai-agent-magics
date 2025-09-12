@@ -6,6 +6,27 @@ Jupyter AI Agent Magics brings AI agent capabilities to JupyterLab, enhancing it
 
 ![Demo](resources/demo.gif)
 
+## Benefits of AI Agent Integration in Jupyter Notebooks
+
+Integrating AI agents directly into Jupyter notebooks provides numerous advantages for data scientists, analysts, and researchers:
+
+1. **Immediate Assistance**: Get code suggestions, debugging help, and explanations without leaving your workflow
+2. **Streamlined Development**: Reduce context switching between different applications when seeking help
+3. **Knowledge Augmentation**: Access expertise across libraries, algorithms, and best practices on demand
+4. **Educational Support**: Learn as you work with explanations and guidance tailored to your code
+5. **Productivity Enhancement**: Complete analyses faster with automated code generation and optimization
+
+## Why Jupyter's Cell-Based Structure Is Ideal for AI Agent Interaction
+
+Jupyter notebooks' architecture of small, discrete code cells creates the perfect environment for AI agent collaboration:
+
+1. **Granular Context**: Each cell provides a focused, manageable unit of code for the AI to analyze
+2. **Iterative Interaction**: The cell-by-cell execution model matches AI's turn-based conversation pattern
+3. **Progressive Development**: Both humans and AI can build solutions incrementally, one logical step at a time
+4. **Immediate Feedback**: Results appear directly below each cell, creating tight feedback loops
+5. **Perfect Scope Size**: Cells typically contain just enough code to perform a specific task without overwhelming complexity
+
+
 ## Features
 
 Jupyter AI Agent Magics offers:
@@ -112,7 +133,7 @@ config_manager = config.ConfigManager.instance
 
 config_manager.model_provider = config.ModelProvider.OpenAI
 config_manager.model_name = "gpt-4"
-config_manager.api_key = "AIzaSyADkFefGtktw7YyvxWIejKIphX-LNYJlUw"
+config_manager.api_key = ""
 ```
 
 ### Anthropic via Vertex

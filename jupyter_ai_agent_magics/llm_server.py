@@ -192,8 +192,8 @@ class LLMServer:
                 print("metadata:", chunk[1])
 
 
-    def process_message(self, query: str, thread_id: Optional[str] = "1"):
-        config = {"configurable": {"thread_id": thread_id}}
+    def process_message(self, query: str, thread_id: Optional[str] = "1", recursion_limit=100):
+        config = {"configurable": {"thread_id": thread_id}, "recursion_limit": recursion_limit}
         
         # Print the query with bold and cyan
         print(f"{ANSI.BOLD}Processing query:{ANSI.RESET} {query}")
@@ -305,7 +305,7 @@ class LLMServer:
         return None
 
 
-    def process_message_html(self, query: str, thread_id: Optional[str] = "1", output_widget = None, flow_box = None):
+    def process_message_html(self, query: str, thread_id: Optional[str] = "1", output_widget = None, flow_box = None, recursion_limit=100):
         def ask_human(tool_query, thread_id: Optional[str] = "1"):
             def on_submit_clicked(_):
                 flow_box.children = []
@@ -411,7 +411,7 @@ class LLMServer:
                 list(flow_box.children) + [prompt_label] + buttons
             )
         
-        config = {"configurable": {"thread_id": thread_id}}
+        config = {"configurable": {"thread_id": thread_id}, "recursion_limit": recursion_limit}
 
         if not output_widget:
             output_widget = widgets.HTML()

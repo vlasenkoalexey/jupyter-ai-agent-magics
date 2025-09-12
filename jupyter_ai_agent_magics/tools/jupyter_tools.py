@@ -749,13 +749,11 @@ class JupyterNotebookTools:
             ),
             StructuredTool.from_function(
                 func=self.update_code_cell_by_cell_id,
-                parse_docstring=True # fails with invalid docstring - KEEPING AS IS
+                parse_docstring=True
             ),
             StructuredTool.from_function(
                 func=self.update_markdown_cell_by_id,
-                 # Assuming this was meant to be False as well, or the docstring needs fixing
-                 # Setting to False to match the pattern of the previous tool, based on original code comment.
-                parse_docstring=True # Changed based on apparent pattern/comment in original
+                parse_docstring=True
             ),
             StructuredTool.from_function(
                 func=self.execute_cell,
