@@ -1,5 +1,7 @@
 from typing import Dict, List, Optional, Any, Literal, Generator
 
+MAX_OUTPUT_TOKENS=4096
+
 
 def create_model(
     model_provider: Literal["vertex_anthropic", "anthropic", "openai", "google"] = "vertex_anthropic",
@@ -14,7 +16,11 @@ def create_model(
             raise ValueError("project_id is required for AnthropicVertex client")
         from langchain_google_vertexai.model_garden import ChatAnthropicVertex
         model = ChatAnthropicVertex(
-            model=model_name, project=project_id, location=location, temperature=temperature
+            model=model_name,
+            project=project_id,
+            location=location,
+            temperature=temperature,
+            max_tokens=MAX_OUTPUT_TOKENS
         )
     elif model_provider == "openai":
         # pip install langchain-openai
@@ -25,7 +31,8 @@ def create_model(
         model = ChatOpenAI(
             model=model_name,
             api_key=api_key,
-            temperature=temperature
+            temperature=temperature,
+            max_tokens=MAX_OUTPUT_TOKENS
         )
     elif model_provider == "anthropic":
         api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
@@ -49,7 +56,8 @@ def create_model(
             model=model_name,
             temperature=temperature,
             max_retries=2,
-            api_key=api_key
+            api_key=api_key,
+            max_tokens=MAX_OUTPUT_TOKENS
         )
     else:
         raise ValueError(f"model_provider {model_provider} is not supported")
